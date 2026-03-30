@@ -70,6 +70,19 @@
         <notificationGroup
             id="LunaOS Notifications"
             displayType="BALLOON"/>
+
+        <fileType name="Luna"
+                  implementationClass="ai.lunaos.intellij.language.LunaFileType"
+                  fieldName="INSTANCE"
+                  language="Luna"
+                  extensions="luna"/>
+
+        <lang.syntaxHighlighterFactory
+                  language="Luna"
+                  implementationClass="ai.lunaos.intellij.language.LunaSyntaxHighlighterFactory"/>
+
+        <configurationType
+                  implementation="ai.lunaos.intellij.language.LunaRunConfigurationType"/>
     </extensions>
 
     <actions>

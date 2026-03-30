@@ -27,6 +27,12 @@ class LunaToolWindowFactory : ToolWindowFactory {
             logsPanel.getContent(), "Logs", false
         )
         toolWindow.contentManager.addContent(logsContent)
+
+        val playgroundPanel = PlaygroundPanel(project)
+        val playgroundContent = contentFactory.createContent(
+            playgroundPanel.getContent(), "Playground", false
+        )
+        toolWindow.contentManager.addContent(playgroundContent)
     }
 
     override fun shouldBeAvailable(project: Project): Boolean = true

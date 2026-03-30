@@ -67,6 +67,16 @@ class LunaApiClient {
         }
     }
 
+    fun executePipe(expression: String): PipeResult {
+        val payload = gson.toJson(mapOf("expression" to expression))
+        val req = post("/api/pipes/execute", payload)
+        return execute(req) { body ->
+            val type = object : TypeToken<ApiResponse<PipeResult>>() {}.type
+            gson.fromJson<ApiResponse<PipeResult>>(body, type).data
+                ?: throw IOException("Empty pipe result")
+        }
+    }
+
     fun analyzeCode(code: String, agentId: String): String {
         val payload = gson.toJson(mapOf("code" to code, "agentId" to agentId))
         val req = post("/api/analyze", payload)
@@ -117,4 +127,6 @@ class LunaApiClient {
     data class RunSummary(val id: String, val agentName: String, val status: String, val startedAt: String, val durationMs: Long?)
     data class LogEntry(val level: String, val message: String, val timestamp: String)
     data class AnalysisResult(val summary: String, val issues: List<String>)
+    data class PipeResult(val status: String, val output: String, val steps: List<StepResult>)
+    data class StepResult(val command: String, val status: String, val durationMs: Long, val output: String)
 }
