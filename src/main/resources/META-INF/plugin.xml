@@ -5,18 +5,38 @@
     <vendor email="hello@lunaos.ai" url="https://lunaos.ai">LunaOS</vendor>
 
     <description><![CDATA[
-        Manage AI agent workflows directly from your IDE. Trigger runs, browse agents,
-        view execution logs, and monitor workflow status — all without leaving IntelliJ.
+        <b>LunaOS</b> brings AI agent orchestration into your JetBrains IDE.
+        Browse, trigger, and monitor AI workflows without switching context.
+        Connect to the LunaOS platform and run agents against your code,
+        stream execution logs in real time, and track run status from
+        the status bar — all from a single tool window.
         <br/><br/>
-        <b>Features:</b>
+
+        <b>Key Features</b>
         <ul>
-            <li>Agent browser with search and category filtering</li>
-            <li>One-click workflow execution with parameter forms</li>
-            <li>Real-time run log streaming in the tool window</li>
-            <li>Editor context menu: analyze selected code with AI agents</li>
-            <li>Status bar widget showing active run count</li>
-            <li>Configurable API endpoint and key in Settings</li>
+            <li><b>Agent Browser</b> — search and filter agents by name or category, view descriptions, and launch runs with one click.</li>
+            <li><b>Workflow Execution</b> — fill in parameter forms and trigger workflows directly from the tool window or the Tools menu (<b>Ctrl+Alt+L</b>).</li>
+            <li><b>Real-Time Log Streaming</b> — watch execution output as it happens in a dedicated Logs panel with level filtering.</li>
+            <li><b>Run History</b> — review recent runs, their status, duration, and outputs in the Runs panel.</li>
+            <li><b>Code Analysis</b> — right-click any selection in the editor and send it to a LunaOS agent for review, refactoring suggestions, or security analysis.</li>
+            <li><b>Status Bar Widget</b> — always-visible indicator of active run count so you never lose track of in-flight work.</li>
+            <li><b>Configurable Connection</b> — point the plugin at any LunaOS API endpoint (cloud or self-hosted) and authenticate with your API key via <b>Settings &gt; Tools &gt; LunaOS</b>.</li>
         </ul>
+        <br/>
+
+        <b>Getting Started</b>
+        <ul>
+            <li>Install the plugin and restart your IDE.</li>
+            <li>Open <b>Settings &gt; Tools &gt; LunaOS</b> and enter your API endpoint and key.</li>
+            <li>Open the <b>LunaOS</b> tool window on the right side bar.</li>
+            <li>Browse agents, pick one, and click <b>Run</b>.</li>
+        </ul>
+        <br/>
+
+        <b>Links</b><br/>
+        <a href="https://docs.lunaos.ai/integrations/intellij">Documentation</a> |
+        <a href="https://github.com/lunaos-ai/lunaos-intellij">GitHub</a> |
+        <a href="https://lunaos.ai">Website</a>
     ]]></description>
 
     <depends>com.intellij.modules.platform</depends>
